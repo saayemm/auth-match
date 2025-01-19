@@ -10,8 +10,8 @@ const Register = () => {
     e.preventDefault()
     const name = e.target.name.value
     const email = e.target.email.value
-    const pass = e.target.password.value
-    console.log(email, pass, name)
+    const password = e.target.password.value
+    console.log(email, password, name)
 
     createUser(email, password)
     .then(result=> {

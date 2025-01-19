@@ -1,12 +1,24 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router'
+import { AuthContext } from '../providers/AuthProvider'
 
 const Login = () => {
+
+  const {signInUser} = useContext(AuthContext)
+
   const hundleLogin = e => {
     e.preventDefault()
     const email = e.target.email.value
-    const pass = e.target.password.value
-    console.log(email, pass)
+    const password = e.target.password.value
+    console.log(email, password)
+
+    signInUser(email, password)
+    .then(result=> {
+      console.log(result.user)
+    })
+    .catch(error=>{
+      console.error(error)
+    });
   }
   return (
     <div className="hero bg-base-200 min-h-screen">
