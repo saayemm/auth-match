@@ -5,7 +5,7 @@ const Home = () => {
   const authInfo = useContext(AuthContext)
   return (
     <div>
-      <h2>{authInfo.name}</h2>
+      <h2>This is a homepage</h2>
     </div>
   )
 }
